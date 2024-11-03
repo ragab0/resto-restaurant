@@ -1,0 +1,320 @@
+/* Starting home-page */
+
+.home-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.home-page nav {
+    --nav-main-p: 0.5rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: var(--shadow-layer);
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 100;
+}
+
+.home-page nav .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-block: var(--nav-main-p);
+}
+
+.home-page .logo {
+    text-transform: capitalize;
+    color: var(--clr-secondry);
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.home-page .logo i {
+    color: var(--clr-main);
+    padding: 0;
+}
+
+.home-page .menu-btn {
+    padding: 0;
+}
+
+.home-page .menu-container {
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+    position: absolute;
+    right: 0rem;
+    top: calc(100% - var(--nav-main-p));
+    padding-top: 0.5rem;
+}
+
+.home-page .links {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+    gap: 0 0.75rem;
+}
+
+.home-page .menu-btn:hover + .menu-container,
+.home-page .menu-container:hover {
+    display: flex;
+}
+
+.home-page .links a {
+    display: block;
+    padding: 0.5rem;
+    color: var(--clr-secondry);
+    text-transform: capitalize;
+    border-radius: 4px;
+}
+
+.home-page .links a.active {
+    background-color: var(--clr-main);
+    color: #fff;
+    font-weight: bold;
+}
+
+.home-page .content {
+    padding-block: 5rem 3rem;
+}
+
+.home-page .content p:first-of-type {
+    color: var(--clr-main);
+}
+
+.home-page .content p {
+    font-size: 1.5rem;
+    margin-block: 1rem;
+}
+
+.home-page .content img {
+    display: none;
+    transform: scale(0.7);
+    animation: only-turn 5s ease-in infinite alternate;
+    -moz-animation-name: only-turn;
+    -moz-animation-duration: 5s;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: alternate;
+}
+
+/* Starting dishes-page */
+.dishes-page figure {
+    padding: 3rem;
+}
+
+.dishes-page h4,
+.dishes-page fieldset .stars {
+    margin-inline: auto;
+    width: fit-content;
+}
+
+.dishes-page fieldset div:last-of-type {
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Starting about-page */
+.about-page .content {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.about-page .content h3 {
+    color: var(--clr-secondry);
+    text-transform: capitalize;
+    text-align: start;
+    margin-block: 0;
+}
+
+.about-page .content .skills {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-block: 1rem;
+}
+
+.about-page .content .skills > div {
+    border: 1px solid var(--clr-secondry);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    cursor: context-menu;
+    transition: var(--transition-main);
+    width: 100%;
+}
+
+.about-page .content .skills > div:hover {
+    background-color: var(--clr-main);
+    border-color: var(--clr-main);
+    color: #fff;
+}
+
+.about-page .content .skills i {
+    color: var(--clr-main);
+    transition: var(--transition-main);
+}
+
+.about-page .content .skills i:hover {
+    opacity: unset;
+    cursor: unset;
+}
+
+.about-page .content .skills > div:hover i {
+    color: #fff;
+}
+
+.about-page .content p {
+    margin-block: 1rem;
+    line-height: 2;
+}
+
+/* Starting review-page */
+.review-page figure header {
+    position: relative;
+}
+
+.review-page figure header div {
+    top: 0;
+    left: unset;
+    right: 0;
+    width: fit-content;
+    padding: 1rem;
+}
+
+.review-page figure header i {
+    background-color: #fff;
+}
+
+/* Starting order-page */
+
+/* Starting footer */
+footer > header {
+    display: flex;
+    flex-flow: row wrap;
+    padding-block: 3rem;
+}
+
+footer > header ul {
+    display: flex;
+    flex-direction: column;
+}
+
+footer > header a {
+    padding: 0.25rem 0;
+    display: block;
+    transition: none;
+    opacity: 0.9;
+    text-transform: capitalize;
+}
+
+footer > header a:hover {
+    color: var(--clr-main);
+    text-decoration: underline;
+}
+
+footer > div {
+    background-color: var(--clr-main);
+    color: #fff;
+}
+
+footer > div > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+
+footer ul {
+    display: flex;
+}
+
+footer i,
+footer p {
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+footer b {
+    font-weight: bold;
+}
+
+footer a {
+    padding: 0.5rem;
+}
+
+/* Starting animations */
+@keyframes only-turn {
+    0% {
+        transform: rotate(0) scale(0.7);
+    }
+    100% {
+        transform: rotate(1turn) scale(1.1);
+    }
+}
+
+/* For mobile only */
+@media (max-width: 767px) {
+    .home-page .menu-container {
+        width: 100%;
+        /** to not show the padding-top */
+        background-color: transparent;
+    }
+    .home-page .menu-container .links,
+    .home-page .menu-container .icons {
+        background-color: white;
+        border-radius: 0.25rem;
+    }
+    .home-page .menu-container .icons {
+        box-shadow: var(--shadow-layer);
+    }
+    .home-page .menu-container:active {
+        display: none;
+    }
+}
+/* Starting other screen designs */
+
+@media (min-width: 768px) {
+    .home-page nav > .container {
+        flex-flow: row nowrap;
+    }
+    .home-page .menu-btn {
+        display: none;
+    }
+    .home-page .menu-container {
+        display: flex;
+        flex-direction: row;
+        position: unset;
+        padding-top: unset;
+    }
+    .home-page .links {
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .home-page .content img {
+        display: block;
+    }
+
+    /* About-page */
+    .about-page .content .skills > div {
+        width: fit-content;
+    }
+
+    /** Footer comp */
+    footer > div > .container {
+        flex-direction: row;
+    }
+}

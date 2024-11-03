@@ -1,0 +1,159 @@
+/* Cards && Media */
+
+figure {
+    position: relative;
+    border: 1px solid var(--clr-shadow-light);
+    border-radius: 4px;
+    box-shadow: var(--mainShadow);
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition-main);
+}
+
+figure:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--secShadow);
+}
+
+figure header img {
+    width: 100%;
+    height: 180px;
+    border-radius: 0.25rem;
+}
+
+figure header div {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: calc(100% + 200px);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    transition: var(--transition-main);
+}
+
+figure:hover header div {
+    width: 100%;
+    left: 0;
+}
+
+figure header div i {
+    font-size: 1.2rem;
+    background-color: rgba(84, 83, 82, 0.2);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+figure header div i:hover {
+    background-color: var(--clr-main);
+    color: #fff;
+    opacity: 1;
+}
+
+fieldset {
+    border: none;
+    margin-top: 0.5rem;
+}
+
+fieldset .stars i {
+    padding: 0;
+    color: var(--clr-main);
+}
+
+fieldset p {
+    margin-bottom: 1rem;
+}
+
+fieldset div:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+fieldset div:last-of-type > button {
+    padding-inline: 0.5rem;
+}
+
+fieldset span {
+    color: var(--clr-main);
+    font-size: 1.5rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cards > * {
+    width: 100%;
+    max-width: 400px;
+    margin-inline: center;
+}
+
+.cards-02 > * {
+    max-width: unset;
+}
+
+.cards > *,
+.cards-02 > *,
+.cards-04 > *,
+.cards-03 > * {
+    width: 100%;
+}
+
+/* 
+ * First mobile design 
+ */
+
+.container {
+    width: 100%;
+    padding-inline: 0.75rem;
+    margin-inline: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    .cards-02 > *,
+    .cards-04 > *,
+    .cards-03 > * {
+        width: calc(50% - 0.5rem);
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    .cards-04 > *,
+    .cards-03 > * {
+        width: calc(calc(100% / 3) - calc(2rem / 3));
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    .cards-04 > * {
+        width: calc(25% - calc(3rem / 4));
+    }
+}
